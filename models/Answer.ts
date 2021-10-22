@@ -9,7 +9,7 @@ Answer.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'answer',
 });
 
 module.exports = Answer;
