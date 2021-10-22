@@ -1,19 +1,10 @@
 # TypeScript RESTful QA API
 
-## Requirements
-
-### Basic
+## Next Steps
 
 * CRUD user account creation
 * Users can answer questions
-* Data is stored in MySQL
-
-### Moderate
-
 * Add user auth
-* Implement sequelize
-
-### Advanced
-
+* Implement docker
 * Users who create the post can select the best answer
 * Users can upvote and downvote answers and questions
