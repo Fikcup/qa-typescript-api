@@ -1,5 +1,7 @@
 export {};
-const { Sequelize, DataTypes, Model } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
+
+const sequelize = require('../config/config');
 
 class User extends Model {}
 
@@ -53,6 +55,10 @@ User.init({
             max: 50
         }
     },
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
 });
 
 module.exports = User;
