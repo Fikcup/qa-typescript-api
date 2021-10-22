@@ -1,5 +1,7 @@
 export {};
-const { Sequelize, DataTypes, Model } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
+
+const sequelize = require('../config/config');
 
 class Answer extends Model {}
 
