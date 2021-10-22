@@ -1,6 +1,6 @@
 export {};
 import { Request, Response } from 'express';
-const User = require('../models');
+const { User } = require('../models');
 
 const userController = {
     getAllUsers(req: Request, res: Response) {
