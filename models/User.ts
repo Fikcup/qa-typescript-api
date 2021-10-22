@@ -10,28 +10,46 @@ User.init({
         primaryKey: true
     },
     username: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING,
         allowNull: false,
         unique: true,
+        validate: {
+            min: 5,
+            max: 50
+        }
     },
     password: {
-        type: DataTypes.STRING(128),
+        type: DataTypes.STRING,
         allowNull: false,
-        is: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+        validate: {
+            is: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+            min: 8,
+            max: 256
+        }
     },
     email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
-        is: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+        validate: {
+            isEmail: true
+        }
     },
     firstName: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            min: 5,
+            max: 50
+        }
     },
     lastName: {
-        type: DataTypes.STRING(50),
+        type: DataTypes.STRING,
         allowNull: true,
+        validate: {
+            min: 5,
+            max: 50
+        }
     },
 });
 
