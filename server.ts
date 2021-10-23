@@ -2,28 +2,23 @@ export {};
 const express = require('express');
 const routes = require('./routes');
 const sequelize = require('./config/connection');
-
-var jwt = require('express-jwt');
-var jwks = require('jwks-rsa');
+const { auth } = require('express-openid-connect');
 
 const app = express();
 const PORT = 3001;
 
-// JSON web token for Auth0
-var jwtCheck = jwt({
-    secret: jwks.expressJwtSecret({
-        cache: true,
-        rateLimit: true,
-        jwksRequestsPerMinute: 5,
-        jwksUri: 'https://dev-ha1x5aag.us.auth0.com/.well-known/jwks.json'
-  }),
-  audience: 'http://localhost:3001',
-  issuer: 'https://dev-ha1x5aag.us.auth0.com/',
-  algorithms: ['RS256']
-});
+// Auth0 configuration
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: 'a long, randomly-generated string stored in env',
+  baseURL: 'http://localhost:3001',
+  clientID: 'I2h5nHlc31AzOYhkqxTg8Y63wqF4w5HN',
+  issuerBaseURL: 'https://dev-ha1x5aag.us.auth0.com'
+};
 
 // middleware
-app.use(jwtCheck);
+app.use(auth(config));
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true

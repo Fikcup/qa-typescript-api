@@ -7,6 +7,10 @@ const apiRoutes = require('./api');
 // route /api
 router.use('/api', apiRoutes);
 
+router.use('/', (req, res) => {
+    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
+
 router.use((req: Request, res: Response) => {
     return res.send('Wrong route!');
 });
