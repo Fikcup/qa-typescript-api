@@ -11,7 +11,17 @@ const answerController = {
             .catch((err: any) => {
                 console.log(err);
                 res.status(500).json(err);
+            });
+    },
+    createAnswer(req: Request, res: Response) {
+        Answer.create(req.body)
+            .then((answerData: Object) => {
+                res.json(answerData);
             })
+            .catch((err: any) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
     },
 };
 
