@@ -40,6 +40,20 @@ const answerController = {
                 res.status(500).json(err);
             });
     },
+    updateAnswer(req: Request, res: Response) {
+        Answer.update(req.body, {
+            where: {
+                uuid: req.params.answerId
+            }
+        })
+            .then((answerData: Object) => {
+                res.json(answerData);
+            })
+            .catch((err: any) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
 };
 
 module.exports = answerController;
