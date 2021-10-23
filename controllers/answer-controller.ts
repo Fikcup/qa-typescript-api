@@ -6,6 +6,7 @@ const { Answer } = require('../models');
 // TODO : Create a question association with the answer
 
 const answerController = {
+    // Users can see all answers associated with a question
     getAllAnswers(req: Request, res: Response) {
         Answer.findAll()
             .then((answerData: Object) => {
@@ -16,6 +17,7 @@ const answerController = {
                 res.status(500).json(err);
             });
     },
+    // Users can view a specific answer to a question
     getOneAnswer(req: Request, res: Response) {
         Answer.findOne({
             where: {
@@ -30,6 +32,7 @@ const answerController = {
                 res.status(500).json(err);
             });
     },
+    // Users can answer questions
     createAnswer(req: Request, res: Response) {
         Answer.create(req.body)
             .then((answerData: Object) => {
@@ -40,6 +43,7 @@ const answerController = {
                 res.status(500).json(err);
             });
     },
+    // Users can update their own answers
     updateAnswer(req: Request, res: Response) {
         Answer.update(req.body, {
             where: {
@@ -54,6 +58,7 @@ const answerController = {
                 res.status(500).json(err);
             });
     },
+    // Users can delete their answers
     deleteAnswer(req: Request, res: Response) {
         Answer.destroy({
             where: {
