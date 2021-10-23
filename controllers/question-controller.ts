@@ -53,6 +53,20 @@ const questionController = {
                 res.status(500).json(err);
             });
     },
+    deleteQuestion(req: Request, res: Response) {
+        Question.destroy({
+            where: {
+                uuid: req.params.questionId
+            }
+        })
+            .then((questionData: Object) => {
+                res.json(questionData);
+            })
+            .catch((err: any) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    },
 }
 
 module.exports = questionController;
