@@ -14,9 +14,8 @@ Question.init(
             allowNull: false,
             unique: true,
         },
-        voteCount: {
-            type: DataTypes.INTEGER,
-            defaultValue: 0,
+        title: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
         content: {
