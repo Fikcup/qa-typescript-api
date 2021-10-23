@@ -10,7 +10,13 @@
     "type": "git",
     "url": "https://github.com/Fikcup/qa-typescript-api.git"
   },
-  "keywords": ["mysql", "typescript", "sequelize", "docker", "rest-api"],
+  "keywords": [
+    "mysql",
+    "typescript",
+    "sequelize",
+    "docker",
+    "rest-api"
+  ],
   "author": "Rhys Wright",
   "license": "MIT",
   "devDependencies": {
@@ -23,6 +29,8 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "jwks-rsa": "^2.0.5",
     "mysql2": "^2.3.2",
     "sequelize": "^6.7.0"
   }
