@@ -12,7 +12,17 @@ const userController = {
                 console.log(err);
                 res.status(500).json(err);
             });
-    }
+    },
+    createUser(req: Request, res: Response) {
+        User.create(req.body)
+            .then((userData: Object) => {
+                res.json(userData);
+            })
+            .catch((err: any) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    },
 };
 
 module.exports = userController;
