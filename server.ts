@@ -9,6 +9,7 @@ var jwks = require('jwks-rsa');
 const app = express();
 const PORT = 3001;
 
+// JSON web token for Auth0
 var jwtCheck = jwt({
     secret: jwks.expressJwtSecret({
         cache: true,
@@ -21,15 +22,17 @@ var jwtCheck = jwt({
   algorithms: ['RS256']
 });
 
+// middleware
 app.use(jwtCheck);
-
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
 
+// aplication routing
 app.use(routes);
 
+// once database is synced, application starts
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
         console.log(`Listening on port ${PORT}`);
