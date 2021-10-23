@@ -7,7 +7,8 @@ const apiRoutes = require('./api');
 // route /api
 router.use('/api', apiRoutes);
 
-router.use('/', (req, res) => {
+router.use('/', (req: any, res: any) => {
+    console.log(req.oidc.isAuthenticated());
     res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
