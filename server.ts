@@ -3,6 +3,7 @@ const express = require('express');
 const routes = require('./routes');
 const sequelize = require('./config/connection');
 const { auth } = require('express-openid-connect');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3001;
@@ -11,10 +12,10 @@ const PORT = 3001;
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'http://localhost:3001',
-  clientID: 'I2h5nHlc31AzOYhkqxTg8Y63wqF4w5HN',
-  issuerBaseURL: 'https://dev-ha1x5aag.us.auth0.com'
+  secret: process.env.SECRET,
+  baseURL: process.env.BASEURL,
+  clientID: process.env.CLIENTID,
+  issuerBaseURL: process.env.ISSUERBASEURL
 };
 
 // middleware
