@@ -15,6 +15,20 @@ const questionController = {
                 res.status(500).json(err);
             });
     },
+    getOneQuestion(req: Request, res: Response) {
+        Question.findOne({
+            where: {
+                uuid: req.params.questionId
+            }
+        })
+            .then((questionData: Object) => {
+                res.json(questionData);
+            })
+            .catch((err: any) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    },
     createQuestion(req: Request, res: Response) {
         Question.create(req.body)
             .then((questionData: Object) => {
