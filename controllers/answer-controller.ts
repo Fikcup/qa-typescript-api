@@ -53,7 +53,21 @@ const answerController = {
                 console.log(err);
                 res.status(500).json(err);
             });
-    }
+    },
+    deleteAnswer(req: Request, res: Response) {
+        Answer.destroy({
+            where: {
+                uuid: req.params.answerId
+            }
+        })
+            .then((answerData: Object) => {
+                res.json(answerData);
+            })
+            .catch((err: any) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    },
 };
 
 module.exports = answerController;
