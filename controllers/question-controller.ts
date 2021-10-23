@@ -39,6 +39,20 @@ const questionController = {
                 res.status(500).json(err);
             });
     },
+    updateQuestion(req: Request, res: Response) {
+        Question.update(req.body, {
+            where: {
+                uuid: req.params.questionId
+            }
+        })
+            .then((questionData: Object) => {
+                res.json(questionData);
+            })
+            .catch((err: any) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    },
 }
 
 module.exports = questionController;

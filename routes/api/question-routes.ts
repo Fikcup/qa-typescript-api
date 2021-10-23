@@ -4,12 +4,13 @@ const {
     getAllQuestions,
     getOneQuestion,
     createQuestion,
+    updateQuestion,
 } = require('../../controllers/question-controller');
 
 // route /api/questions/
 router.route('/').get(getAllQuestions).post(createQuestion);
 
 // route /api/questions/:questionId
-router.route('/:questionId').get(getOneQuestion);
+router.route('/:questionId').get(getOneQuestion).put(updateQuestion);
 
 module.exports = router;
