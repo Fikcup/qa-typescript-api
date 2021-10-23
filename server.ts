@@ -29,7 +29,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-// aplication routing
+// application routing
 app.use(routes);
 
 // once database is synced, application starts
