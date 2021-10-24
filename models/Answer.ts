@@ -21,7 +21,7 @@ Answer.init(
         },
         chosenAnswer: {
             type: DataTypes.BOOLEAN,
-            defaultValue: 0,
+            defaultValue: false,
             allowNull: false,
         },
         content: {
