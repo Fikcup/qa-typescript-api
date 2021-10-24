@@ -2,9 +2,6 @@ export {};
 import { Request, Response } from 'express';
 const { Answer } = require('../models');
 
-// TODO : Create a user association with the answer
-// TODO : Create a question association with the answer
-
 const answerController = {
     // Users can see all answers associated with a question
     getAllAnswers(req: Request, res: Response) {
