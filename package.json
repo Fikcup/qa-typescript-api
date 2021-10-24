@@ -14,7 +14,6 @@
     "mysql",
     "typescript",
     "sequelize",
-    "docker",
     "rest-api"
   ],
   "author": "Rhys Wright",
