@@ -15,7 +15,7 @@
 ## About The Project
 
 ![QA API Screenshot](./assets/qaAPI.PNG)
-Project Link: [QA API Walkthrough]()
+Project Link: [QA API Walkthrough](https://youtu.be/Vs1sCBIHsdM)
 
 ### Enhanced Entity Relationship Diagram
 
