@@ -19,7 +19,7 @@ Project Link: [QA API Walkthrough](https://youtu.be/Vs1sCBIHsdM)
 
 ### Enhanced Entity Relationship Diagram
 
-![Database EER Diagram](./assets/qaEER.PNG)
+![Database EER Diagram](./assets/qandaEER.PNG)
 
 ### Built With
 
